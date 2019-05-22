@@ -199,8 +199,8 @@ export class VerticalIcons {
     this.events.emit('showContent', name)
   }
 
-  updateActivations(name) {
-    if (name === "home") {
+  updateActivations (name) {
+    if (name === 'home') {
       this.activateHome()
     } else {
       this.removeActive()
@@ -222,7 +222,7 @@ export class VerticalIcons {
     this.events.emit('toggleContent', name)
   }
 
-  activateHome() {
+  activateHome () {
     globalRegistry.get('appmanager').api.ensureActivated('home')
   }
 
