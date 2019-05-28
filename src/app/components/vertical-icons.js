@@ -209,12 +209,8 @@ export class VerticalIcons {
   }
 
   updateActivations (name) {
-    if (name === 'home') {
-      this.activateHome()
-    } else {
-      this.removeActive()
-      this.addActive(name)
-    }
+    this.removeActive()
+    this.addActive(name)
   }
 
   onThemeChanged (themeType) {
@@ -226,7 +222,10 @@ export class VerticalIcons {
     }
   }
 
-  activateHome () {
+  /**
+   * Show the home page
+   */
+  showHome () {
     globalRegistry.get('appmanager').api.ensureActivated('home')
   }
 
@@ -235,7 +234,7 @@ export class VerticalIcons {
     <div
       class="${css.homeIcon}"
       onclick="${(e) => {
-        this.activateHome()
+        this.showHome()
       }}"
       plugin="${this.homeProfile.name}" title="${this.homeProfile.displayName}"
     >
